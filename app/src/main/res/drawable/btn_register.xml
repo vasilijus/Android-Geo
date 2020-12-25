@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:color="@color/ripple_effect"
     tools:targetApi="lollipop_mr1">
-
     <item>
         <shape android:shape="rectangle">
             <solid android:color="@color/btn_sign_in"></solid>
@@ -11,5 +10,4 @@
             <corners android:radius="2dp"></corners>
         </shape>
     </item>
-
 </selector>
