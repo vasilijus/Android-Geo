@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Application Geo</string>
+    <string name="app_in_name">Geo appa</string>
+    <string name="app_in_name_after">Welcome</string>
+    <string name="text_bottom">Login to Dashboard</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="btn_register">Register</string>
 </resources>

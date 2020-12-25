@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "350896366699",
+    "project_id": "androidgeoapp-e4091",
+    "storage_bucket": "androidgeoapp-e4091.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350896366699:android:b4139ff82ea40637c97d2e",
+        "android_client_info": {
+          "package_name": "com.example.applicationgeo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350896366699-ls4l3r2k8b3m9v916ia82cib3grg82ln.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.applicationgeo",
+            "certificate_hash": "d99b0bbd021acdc5ca5ef7f797afb0285c289519"
+          }
+        },
+        {
+          "client_id": "350896366699-trvi013vbvo5r35qfemobjlba7vrt6tn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhnRZJMxtDlvWK2QBQaATKD9ULKN-FsC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350896366699-trvi013vbvo5r35qfemobjlba7vrt6tn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
