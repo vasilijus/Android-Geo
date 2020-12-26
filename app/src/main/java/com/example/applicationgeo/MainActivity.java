@@ -12,7 +12,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicationgeo.Models.User;
-
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        dialog.setNegativeButton("Add", new DialogInterface.OnClickListener() {
+        dialog.setPositiveButton("Add", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
                 if(TextUtils.isEmpty(email.getText().toString())) {
