@@ -1,6 +1,7 @@
 package com.example.applicationgeo;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -70,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
         View sign_in_window = inflater.inflate( R.layout.sign_in_window, null );
         dialog.setView( sign_in_window );
 
-        final MaterialEditText email = findViewById( R.id.emailField );
-        final MaterialEditText pass  = findViewById( R.id.passField );
+        final MaterialEditText email = sign_in_window.findViewById( R.id.emailField );
+        final MaterialEditText pass  = sign_in_window.findViewById( R.id.passField );
 
         dialog.setNegativeButton("Back", new DialogInterface.OnClickListener() {
             @Override
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if( pass.getText().toString().length() < 5 ) {
-                    Snackbar.make(root, "Enter your email addr", Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(root, "Enter your password", Snackbar.LENGTH_LONG).show();
                     return;
                 }
 
@@ -97,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
-
+                            startActivity( new Intent(MainActivity.this, MapActivity.class) );
+                            finish();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -173,12 +175,18 @@ public class MainActivity extends AppCompatActivity {
                             phone.getText().toString() );
 
                             // indexing user by field: email
-                            users.child(user.getEmail())
-                                    .setValue(user)
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            users.child( FirebaseAuth.getInstance().getCurrentUser().getUid() ) //user.getEmail()
+                                .setValue(user)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Snackbar.make( root, "User has been created!", Snackbar.LENGTH_SHORT ).show();
+                                    }
+                                })
+                            .addOnFailureListener(new OnFailureListener() {
                                 @Override
-                                public void onSuccess(Void aVoid) {
-                                    Snackbar.make( root, "User has been created!", Snackbar.LENGTH_SHORT ).show();
+                                public void onFailure(@NonNull Exception e) {
+                                    Snackbar.make( root, "User could't be made.", Snackbar.LENGTH_SHORT).show();
                                 }
                             });
                         }
